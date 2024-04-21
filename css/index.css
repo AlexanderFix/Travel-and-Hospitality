@@ -10,12 +10,12 @@ html {
 a,
 a:visited {
     color: rgb(255, 255, 255);
-font-family: Inter;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-letter-spacing: -1%;
-text-align: left;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -1%;
+    text-align: left;
 
 }
 
@@ -45,7 +45,7 @@ h1 {
 h2 {
     color: rgb(0, 0, 0);
     font-family: Inter;
-    font-size: 60px;
+    font-size: clamp(18px, 5.8vw, 60px);
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -5%;
@@ -220,46 +220,61 @@ nav a:visited {
     flex-direction: column;
     gap: 12px;
 }
-.for_travel{
+
+.for_travel {
     display: flex;
     flex-direction: column;
     gap: 64px;
     padding: 70px 100px 0px 100px;
 }
-.for_travel button{
+
+.for_travel button {
     margin-top: 56px;
 }
-.product{
+
+.product {
     gap: 32px;
 }
+
 .slider {
     display: flex;
     flex-direction: column;
- gap: 32px;
+    gap: 32px;
 }
 
 .slide {
-    display: flex;   box-sizing: border-box;
-border: 2px solid rgba(0, 0, 0, 0.04);
-border-radius: 32px;
+    display: flex;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    border-radius: 32px;
 
-box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
-background: rgb(255, 255, 255);
-padding: 42px;
-width: 100%;
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+    background: rgb(255, 255, 255);
+    padding: 42px;
+    width: 100%;
+    gap: 10px;
 }
-.slide h2{
-    text-align: left;
-}
-.slider a{
+
+
+
+.list button {
     padding: 16px 32px 16px 32px;
     font-size: 18px;
-}
-.slide img {
-    max-width: 507px;
-    width: 100%;
+    line-height: 100%;
+    margin-top: 0;
 }
 
+.slide1 img {
+    max-width: 507px;
+    width: 50%;
+}
+
+.slide2 img {
+    width: 50%;
+}
+.slide3 img {
+    width: 50%;
+}
 .slide ul {
     padding-left: 20px;
 }
@@ -267,42 +282,148 @@ width: 100%;
 .slide li {
     color: rgba(42, 43, 47, 0.9);
     font-family: Inter;
-    font-size: 18px;
     font-weight: 400;
     line-height: 140%;
     letter-spacing: -1%;
     text-align: left;
     list-style-type: disc;
 }
+.slide1 {
+    z-index: 3;
+    position: relative;
+}
+
+.slide1 li {
+    font-size: clamp(8px, 1.1vw, 18px);
+}
+
+.slide2 {
+    z-index: 2;
+    position: absolute;
+    top: 60px;
+    width: 84%;
+    height: 90%;
+}
+
+.slide2 li {
+    font-size: clamp(8px, 1.1vw, 16px);
+}
+
+.slide3 {
+    z-index: 1;
+    position: absolute;
+    top: 75px;
+    width: 78%;
+    height: 91%;
+
+}
+
+
+
+.slide3 li {
+    font-size: clamp(8px, 0.8vw, 14px);
+
+}
 
 .about_slide {
-display: flex;
-flex-direction: column;
-gap: 32px;
-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 40%;
+    overflow: hidden;
 }
-.slide_wrapper{
+
+.about_slide h2 {
+    font-size: clamp(18px, 3.8vw, 60px);
+    text-align: left;
+}
+
+.slide_wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-#slide1{
-    z-index: 10;
-    position: relative;
-    
+    transition: 3s;
+
 }
 
-#slide2 {
-    z-index: 9;
-    position: absolute;
-    top: 25px;
-    width: 1042px;
-    
+
+
+@keyframes move {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -180px;
+        transform: rotateX(90deg);
+       
+    }
+    75%{
+         z-index: 1;
+         width: 75%;
+    }
+
+    100% {
+        top: 75px;
+    }
 }
-#slide3 {
-    z-index: 8;
-    position: absolute;
-    top: 25px;
-    width: 973px;
+
+@keyframes move2 {
+    0% {
+        top: 60px;
+    }
+
+    50% {
+        top: 75px;
+        transform: rotateX(-65deg);
+    }
+    75%{
+        z-index: 3;
+    }
+
+    100% {
+        top: 0;
+        width: 100%;
+    }
+}
+
+#slide1 {
+    
+
+    /* display: none; */
+}
+
+
+
+.help {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 64px 100px 70px 100px;
+    gap: 70px;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.block_wrapper {
+    display: flex;
+    gap: 16px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 295px;
+    gap: 14px;
+}
+
+.block_img {
+    width: 100%;
 }
