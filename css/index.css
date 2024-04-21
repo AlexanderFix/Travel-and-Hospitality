@@ -6,41 +6,217 @@ html {
     max-width: 1440px;
     margin: 0 auto;
 }
-a,a:visited{
+
+a,
+a:visited {
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -1%;
+
+}
+
+.background {
+    border-radius: 12px;
+    background: rgb(1, 70, 254);
+    width: 100%;
+    padding: 12px 24px 12px 24px;
+    display: block;
+}
+
+img {
+    width: 100%;
+    margin: auto;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -5%;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -5%;
+    text-align: center;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    font-family: Inter;
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 100%;
+    letter-spacing: -3%;
+    text-align: center;
+}
+
+p {
+    color: rgba(42, 43, 47, 0.8);
+    font-family: Manrope;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -1%;
+    text-align: center;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 80px;
+}
+
+button {
+    border-radius: 12px;
+    background: rgb(1, 70, 254);
+    color: rgb(255, 255, 255);
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -1%;
+    padding: 20px 24px 20px 24px;
+    max-width: 366px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+.header_wrapper {
+    max-width: 1168px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.logo {
+    max-width: 127px;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+}
+
+nav a,
+nav a:visited {
+
     color: rgb(37, 37, 37);
-    font-family: 'Open Sans';
+    font-family: Open Sans;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0.16px;
-    text-align: left;
 }
-header{
+
+.list_wrapper {
     display: flex;
-    justify-content: space-between;
-    height: 80px;
+    gap: 100px;
 }
-.logo{
-    max-width: 127px;
-    width: 100%;
-}
+
 .list {
     display: flex;
     gap: 24px;
     align-items: center;
+    justify-content: center;
 }
-.account{
+
+.account {
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-.account button{
+.account button {
     background: none;
     align-items: center;
     display: flex;
+    color: rgb(102, 102, 102);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.16px;
+
 }
-.account button::before{
+
+
+
+.account button::before {
     content: url(../img/profile\ 1.svg);
     padding: 9px;
 }
+
+
+
+.main_header {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.text {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.text p {
+    max-width: 700px;
+}
+
+.main_content {
+    padding: 64px 100px 64px 100px;
+    ;
+    gap: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_content_list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main_content_list_block {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    width: 400px;
+    padding: 16px;
+
+}
+
+.list_block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.slider{
+    display: flex;
+    flex-direction: column;
+}
+
