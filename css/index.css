@@ -10,10 +10,12 @@ html {
 a,
 a:visited {
     color: rgb(255, 255, 255);
-    font-family: Inter;
-    font-weight: 600;
-    line-height: 24px;
-    letter-spacing: -1%;
+font-family: Inter;
+font-size: 16px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: -1%;
+text-align: left;
 
 }
 
@@ -206,7 +208,11 @@ nav a:visited {
     min-width: 400px;
     width: 400px;
     padding: 16px;
-
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    border-radius: 32px;
+    height: 422px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.08);
 }
 
 .list_block {
@@ -214,9 +220,89 @@ nav a:visited {
     flex-direction: column;
     gap: 12px;
 }
-
-.slider{
+.for_travel{
     display: flex;
     flex-direction: column;
+    gap: 64px;
+    padding: 70px 100px 0px 100px;
+}
+.for_travel button{
+    margin-top: 56px;
+}
+.product{
+    gap: 32px;
+}
+.slider {
+    display: flex;
+    flex-direction: column;
+ gap: 32px;
 }
 
+.slide {
+    display: flex;   box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.04);
+border-radius: 32px;
+
+box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+background: rgb(255, 255, 255);
+padding: 42px;
+width: 100%;
+}
+.slide h2{
+    text-align: left;
+}
+.slider a{
+    padding: 16px 32px 16px 32px;
+    font-size: 18px;
+}
+.slide img {
+    max-width: 507px;
+    width: 100%;
+}
+
+.slide ul {
+    padding-left: 20px;
+}
+
+.slide li {
+    color: rgba(42, 43, 47, 0.9);
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -1%;
+    text-align: left;
+    list-style-type: disc;
+}
+
+.about_slide {
+display: flex;
+flex-direction: column;
+gap: 32px;
+width: 400px;
+}
+.slide_wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#slide1{
+    z-index: 10;
+    position: relative;
+    
+}
+
+#slide2 {
+    z-index: 9;
+    position: absolute;
+    top: 25px;
+    width: 1042px;
+    
+}
+#slide3 {
+    z-index: 8;
+    position: absolute;
+    top: 25px;
+    width: 973px;
+}
