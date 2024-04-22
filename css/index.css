@@ -11,7 +11,7 @@ a,
 a:visited {
     color: rgb(255, 255, 255);
     font-family: Inter;
-    font-size: 16px;
+    font-size: clamp(8px, 2.7vw, 16px);
     font-weight: 600;
     line-height: 24px;
     letter-spacing: -1%;
@@ -35,7 +35,7 @@ img {
 h1 {
     color: rgb(0, 0, 0);
     font-family: Inter;
-    font-size: 70px;
+    font-size: clamp(24px, 7vw, 70px);
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -5%;
@@ -45,7 +45,7 @@ h1 {
 h2 {
     color: rgb(0, 0, 0);
     font-family: Inter;
-    font-size: clamp(18px, 5.8vw, 60px);
+    font-size: clamp(12px, 5.8vw, 60px);
     font-weight: 900;
     line-height: 100%;
     letter-spacing: -5%;
@@ -72,6 +72,13 @@ p {
     text-align: center;
 }
 
+hr {
+    height: 2px;
+    background: rgb(37, 37, 37);
+    width: 0;
+    transition: .3s;
+    margin: 0 auto;
+}
 
 main {
     display: flex;
@@ -95,7 +102,10 @@ button {
     width: 100%;
 }
 
-
+button:hover {
+    box-shadow: 0 0 10px rgb(1, 70, 254);
+    scale: 1.1;
+}
 
 .header_wrapper {
     max-width: 1168px;
@@ -104,11 +114,15 @@ button {
     justify-content: space-between;
     height: 80px;
     margin: 0 auto;
+    gap: 20px;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .logo {
     max-width: 127px;
     width: 100%;
+    margin: 0;
 }
 
 nav {
@@ -129,6 +143,8 @@ nav a:visited {
 .list_wrapper {
     display: flex;
     gap: 100px;
+    align-items: center;
+
 }
 
 .list {
@@ -138,11 +154,26 @@ nav a:visited {
     justify-content: center;
 }
 
+.list li:hover hr {
+    width: 100%;
+}
+
 .account {
     display: flex;
     align-items: center;
     gap: 24px;
 }
+
+.account a {
+    transition: .3s;
+}
+
+.account a:hover {
+    box-shadow: 0 0 10px rgb(1, 70, 254);
+    scale: 1.1;
+}
+
+
 
 .account button {
     background: none;
@@ -150,17 +181,30 @@ nav a:visited {
     display: flex;
     color: rgb(102, 102, 102);
     font-family: Open Sans;
-    font-size: 16px;
+    font-size: clamp(8px, 2.7vw, 16px);
     font-weight: 700;
     line-height: 20px;
     letter-spacing: 0.16px;
+    padding: 0;
+}
 
+.acc_but:hover hr {
+    width: 110%;
+}
+
+.acc_but:hover button {
+    scale: 1.1;
+    box-shadow: none;
+}
+
+.acc_but:hover button::before {
+    scale: 1.1;
 }
 
 
 
 .account button::before {
-    content: url(../img/profile\ 1.svg);
+    content: url(../img/profile1.svg);
     padding: 9px;
 }
 
@@ -172,10 +216,10 @@ nav a:visited {
     align-self: center;
     justify-content: center;
     gap: 40px;
+    padding: 0 50px;
 }
 
 .text {
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,7 +233,6 @@ nav a:visited {
 
 .main_content {
     padding: 64px 100px 64px 100px;
-    ;
     gap: 70px;
     display: flex;
     flex-direction: column;
@@ -247,7 +290,6 @@ nav a:visited {
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.04);
     border-radius: 32px;
-
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
     background: rgb(255, 255, 255);
     padding: 42px;
@@ -259,7 +301,7 @@ nav a:visited {
 
 .list button {
     padding: 16px 32px 16px 32px;
-    font-size: 18px;
+    font-size: clamp(8px, 1.5vw, 18px);
     line-height: 100%;
     margin-top: 0;
 }
@@ -272,9 +314,11 @@ nav a:visited {
 .slide2 img {
     width: 50%;
 }
+
 .slide3 img {
     width: 50%;
 }
+
 .slide ul {
     padding-left: 20px;
 }
@@ -287,14 +331,13 @@ nav a:visited {
     letter-spacing: -1%;
     text-align: left;
     list-style-type: disc;
+    font-size: clamp(6px, 1.1vw, 18px);
 }
+
+
 .slide1 {
     z-index: 3;
     position: relative;
-}
-
-.slide1 li {
-    font-size: clamp(8px, 1.1vw, 18px);
 }
 
 .slide2 {
@@ -315,7 +358,6 @@ nav a:visited {
     top: 75px;
     width: 78%;
     height: 91%;
-
 }
 
 
@@ -334,7 +376,7 @@ nav a:visited {
 }
 
 .about_slide h2 {
-    font-size: clamp(18px, 3.8vw, 60px);
+    font-size: clamp(18px, 3.4vw, 60px);
     text-align: left;
 }
 
@@ -343,43 +385,29 @@ nav a:visited {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 3s;
-
 }
 
+.noactive {
+    border-radius: 12px;
+    background: rgb(244, 246, 253);
+    color: rgb(0, 0, 0);
+}
 
+.noactive:hover {
+    box-shadow: 0 0 5px rgb(244, 246, 253);
+}
 
 @keyframes move {
-    0% {
-        top: 0;
-    }
-
     50% {
-        top: -180px;
+        top: -50px;
         transform: rotateX(90deg);
-       
-    }
-    75%{
-         z-index: 1;
-         width: 75%;
-    }
-
-    100% {
-        top: 75px;
     }
 }
 
 @keyframes move2 {
-    0% {
-        top: 60px;
-    }
-
     50% {
-        top: 75px;
-        transform: rotateX(-65deg);
-    }
-    75%{
-        z-index: 3;
+        top: 50px;
+        transform: rotateX(-75deg);
     }
 
     100% {
@@ -388,14 +416,6 @@ nav a:visited {
     }
 }
 
-#slide1 {
-    
-
-    /* display: none; */
-}
-
-
-
 .help {
     display: flex;
     flex-direction: column;
@@ -403,6 +423,7 @@ nav a:visited {
     align-items: center;
     padding: 64px 100px 70px 100px;
     gap: 70px;
+    background: rgb(244, 246, 253);
 }
 
 .blocks {
@@ -414,16 +435,193 @@ nav a:visited {
 .block_wrapper {
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .block {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 295px;
+    width: 295px;
     gap: 14px;
 }
 
 .block_img {
     width: 100%;
+}
+
+.burger {
+    display: none;
+}
+
+.burger_wrapper {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+
+    header {
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    body.lock {
+        overflow: hidden;
+    }
+
+    .burger_button {
+        display: flex;
+        width: 44px;
+        height: 44px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        border: 1px solid #665F55;
+        background: none;
+    }
+
+    .burger_menu {
+        display: block;
+        width: 18px;
+        height: 10px;
+        position: relative;
+        transition: 1s;
+        margin: auto 20px;
+
+    }
+
+    .burger_menu::after,
+    .burger_menu::before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        background-color: #403F3D;
+        position: absolute;
+        transition: .3s;
+        left: 0;
+    }
+
+    .burger_menu::before {
+        top: 0;
+    }
+
+    .burger_menu::after {
+        bottom: 0;
+    }
+
+    .burger_menu.burger_active::after {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+
+    .burger_menu.burger_active::before {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+@media (max-width: 764px) {
+    main {
+        gap: 20px;
+    }
+
+    .list_wrapper {
+        gap: 20px;
+    }
+
+    .background {
+        padding: 6px 12px;
+    }
+
+    .main_content {
+        padding: 16px 25px;
+        gap: 30px;
+    }
+
+    .for_travel {
+        gap: 30px;
+        padding: 15px 15px;
+    }
+
+    .list button {
+        padding: 14px 26px;
+    }
+
+    .slide {
+        padding: 21px;
+    }
+
+    .slide2 {
+        top: 40px;
+    }
+
+    .slide3 {
+        top: 50px;
+    }
+
+    .about_slide {
+        gap: 16px;
+    }
+    .help{
+        padding: 16px 25px;
+    }
+}
+
+@media (max-width: 450px) {
+button{
+    width: auto;
+}
+    .list_wrapper {
+        gap: 10px;
+    }
+
+    .account {
+        gap: 10px;
+    }
+
+    .header_wrapper {
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .main_header {
+        padding: 0 20px;
+    }
+
+    .main_content_list_block {
+        width: 350px;
+        height: 350px;
+        min-width: auto;
+    }
+
+    .list button {
+        font-size: clamp(7px, 1.9vw, 18px);
+        padding: 8px 16px;
+        border-radius: 5px;
+    }
+
+    .slide {
+        padding: 15px;
+    }
+
+    .about_slide {
+        gap: 8px;
+    }
+    .slide2 {
+        top: 30px;
+    }
+    .slide3{
+        top: 40px;
+    }
 }
